@@ -60,7 +60,7 @@ pip install fastapi "uvicorn[standard]" sqlalchemy psycopg2-binary python-dotenv
 The application will automatically create the database tables when the server starts. However, you can instantly populate the database with initial mock users and to-do items by running:
 
 ```bash
-python seed.py
+python -m scripts.seed
 ```
 *Note: This creates an admin user (`john_doe`) and a regular user (`jane_smith`). The password for both is `password123`.*
 

@@ -1,13 +1,13 @@
 from fastapi import FastAPI
-from core.database import engine, Base
+from app.core.database import engine, Base
 
 # Import models before calling create_all
-from users.models import UserDB
-from todos.models import TodoDB
+from app.users.models import UserDB
+from app.todos.models import TodoDB
 
-from auth.router import router as auth_router
-from users.router import router as users_router
-from todos.router import router as todos_router
+from app.auth.router import router as auth_router
+from app.users.router import router as users_router
+from app.todos.router import router as todos_router
 
 Base.metadata.create_all(bind=engine)
 

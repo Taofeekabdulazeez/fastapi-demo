@@ -1,8 +1,8 @@
 import os
-from core.database import SessionLocal, engine, Base
-from todos.models import TodoDB
-from users.models import UserDB
-from auth.security import get_password_hash
+from app.core.database import SessionLocal, engine, Base
+from app.todos.models import TodoDB
+from app.users.models import UserDB
+from app.auth.security import get_password_hash
 
 # Ensure tables are created
 Base.metadata.create_all(bind=engine)

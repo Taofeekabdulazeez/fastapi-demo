@@ -1,6 +1,6 @@
 from typing import Optional, List
 from pydantic import BaseModel, ConfigDict
-from todos.schemas import Todo
+from app.todos.schemas import Todo
 
 class UserBase(BaseModel):
     username: str
@@ -9,6 +9,10 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
     role: Optional[str] = "user"
+
+class UserLogin(BaseModel):
+    username_or_email: str
+    password: str
 
 class UserUpdate(BaseModel):
     username: Optional[str] = None
